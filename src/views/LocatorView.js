@@ -18,19 +18,15 @@ define([
 
   return declare([_WidgetBase, _TemplatedMixin], {
     templateString: template,
-    constructor: function() {
-      this.set('x', 0);
-      this.set('y', 0);
-      store.watch('x', function(_, __, val) {
-        this.set('x', fixed(val));
-      }.bind(this));
-      store.watch('y', function(_, __, val) {
-        this.set('y', fixed(val));
-      }.bind(this))
-    },
     postCreate: function() {
-      bind(this.yNode).to(this, 'y');
-      bind(this.xNode).to(this, 'x');
+      var numFixed = function(i) {
+        return fixed(i);
+      };
+      var xStore = bind(numFixed).to(store, 'x');
+      var yStore = bind(numFixed).to(store, 'y');
+
+      bind(this.yNode).to(yStore);
+      bind(this.xNode).to(xStore);
     }
   });
 

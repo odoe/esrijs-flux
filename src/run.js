@@ -23,9 +23,6 @@
       name: 'stores',
       location: locationPath + 'src/stores'
     }, {
-      name: 'dispatchers',
-      location: locationPath + 'src/dispatchers'
-    }, {
       name: 'app',
       location: locationPath + 'src',
       main: 'main'

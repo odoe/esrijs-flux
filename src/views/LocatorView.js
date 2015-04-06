@@ -4,19 +4,20 @@ define([
   'dijit/_WidgetBase',
   'dijit/_TemplatedMixin',
   'dbind/bind',
+  'stores/LocatorStore',
   'dojo/text!./templates/LocatorView.html'
 ], function(
   declare, topic,
   _WidgetBase, _TemplatedMixin,
-  bind,
+  bind, store,
   template
 ) {
 
   return declare([_WidgetBase, _TemplatedMixin], {
     templateString: template,
     postCreate: function() {
-      bind(this.yNode).to(this.store, 'y');
-      bind(this.xNode).to(this.store, 'x');
+      bind(this.yNode).to(store, 'y');
+      bind(this.xNode).to(store, 'x');
     }
   });
 

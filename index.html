@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EsriJS & ReactJS</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">
+        <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+        <meta name='viewport' content='initial-scale=1.0 maximum-scale=1.0'>
+        <style>
+          html, body, #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+          }
+
+          body {
+            background-color: #FFF;
+            overflow: hidden;
+          }
+
+          #map-area {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+          }
+
+          .map-container {
+            width: 100%;
+            height: 100%;
+          }
+
+          #locator-area {
+            position: absolute;
+            z-index: 999;
+            right: 0;
+            top: 0;
+            width: 200px;
+          }
+        </style>
+    </head>
+    <body>
+        <div id="map-area"></div>
+        <div id="locator-area"></div>
+        <script src="//js.arcgis.com/3.13/"></script>
+        <script src='src/run.js'></script>
+    </body>
+</html>

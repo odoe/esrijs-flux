@@ -19,11 +19,8 @@ define([
   return declare([_WidgetBase, _TemplatedMixin], {
     templateString: template,
     postCreate: function() {
-      var numFixed = function(i) {
-        return fixed(i);
-      };
-      var xStore = bind(numFixed).to(store, 'x');
-      var yStore = bind(numFixed).to(store, 'y');
+      var xStore = bind(fixed).to(store, 'x');
+      var yStore = bind(fixed).to(store, 'y');
 
       bind(this.yNode).to(yStore);
       bind(this.xNode).to(xStore);

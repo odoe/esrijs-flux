@@ -1,6 +1,5 @@
 define([
   'dojo/_base/declare',
-  'dojo/topic',
   'dijit/_WidgetBase',
   'dijit/_TemplatedMixin',
   'dbind/bind',
@@ -8,7 +7,7 @@ define([
   'helpers/NumFormatter',
   'dojo/text!./templates/LocatorView.html'
 ], function(
-  declare, topic,
+  declare,
   _WidgetBase, _TemplatedMixin,
   bind, store, format,
   template

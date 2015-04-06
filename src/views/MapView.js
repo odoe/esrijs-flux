@@ -22,7 +22,7 @@ define([
       this.set('map', map);
       var handle = on(map, 'mouse-move', function(e) {
         LocatorAction.updateXY(e.mapPoint);
-      }.bind(this));
+      });
       this.own(handle);
     }
   });

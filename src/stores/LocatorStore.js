@@ -8,13 +8,7 @@ define([
 
   var Store = declare([Stateful], {
     x: 0,
-    y: 0,
-    getXY: function() {
-      return {
-        x: this.get('x'),
-        y: this.get('y')
-      };
-    }
+    y: 0
   });
 
   // http://www.anujgakhar.com/2013/08/29/singletons-in-dojo/

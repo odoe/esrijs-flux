@@ -1,13 +1,10 @@
 define([
   'dojo/_base/declare',
   'dojo/Stateful',
-  'dojo/topic',
-  'helpers/NumFormatter'
+  'dojo/topic'
 ], function(
-  declare, Stateful, topic, format
+  declare, Stateful, topic
 ) {
-
-  var fixed = format(3);
 
   var Store = declare([Stateful], {
     x: 0,
@@ -24,8 +21,8 @@ define([
   if (!_instance) {
     var _instance = new Store();
     topic.subscribe('UPDATE-XY', function(data) {
-      _instance.set('x', fixed(data.x));
-      _instance.set('y', fixed(data.y));
+      _instance.set('x', data.x);
+      _instance.set('y', data.y);
     });
   }
   return _instance;

@@ -1,11 +1,9 @@
-define([
-  'dojo/topic'
-], function(topic) {
+import topic from 'dojo/topic';
 
-  return {
-    updateXY: function updateXY(data) {
-      topic.publish('UPDATE-XY', data);
-    }
-  };
+var updates = {
+  updateXY: function updateXY(data) {
+    topic.publish('UPDATE-XY', data);
+  }
+};
 
-});
+export default updates;

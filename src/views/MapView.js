@@ -1,30 +1,23 @@
-define([
-  'dojo/_base/declare',
-  'dojo/on',
-  'dijit/_WidgetBase',
-  'dijit/_TemplatedMixin',
-  'esri/map',
-  'actions/LocatorActions'
-], function(
-  declare, on,
-  _WidgetBase, _TemplatedMixin,
-  Map, LocatorAction
-) {
+import declare from 'dojo/_base/declare';
+import on from 'dojo/on';
+import _WidgetBase from'dijit/_WidgetBase';
+import _TemplatedMixin from 'dijit/_TemplatedMixin';
+import Map from 'esri/map';
+import LocatorAction from 'actions/LocatorActions';
 
-  return declare([_WidgetBase, _TemplatedMixin], {
-    templateString: '<div class="map-container"></div>',
-    postCreate: function() {
-      var map = new Map(this.domNode, {
-        center: [-118, 34.5],
-        zoom: 8,
-        basemap: 'topo'
-      });
-      this.set('map', map);
-      var handle = on(map, 'mouse-move', function(e) {
-        LocatorAction.updateXY(e.mapPoint);
-      });
-      this.own(handle);
-    }
-  });
-
+export default declare([_WidgetBase, _TemplatedMixin], {
+  templateString: '<div class="map-container"></div>',
+  postCreate() {
+    var map = new Map(this.domNode, {
+      center: [-118, 34.5],
+      zoom: 8,
+      basemap: 'topo'
+    });
+    this.set('map', map);
+    var handle = on(map, 'mouse-move', (e) => {
+      LocatorAction.updateXY(e.mapPoint);
+    });
+    this.own(handle);
+  }
 });
+

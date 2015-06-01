@@ -44,7 +44,34 @@
     <body>
         <div id="map-area"></div>
         <div id="locator-area"></div>
+        <script>
+          var pathRX = new RegExp(/\/[^\/]+$/);
+          var locationPath = location.pathname.replace(pathRX, '');
+          var dojoConfig = {
+              async: true,
+              parseOnLoad: true,
+              packages: [{
+                name: 'dbind',
+                location: 'https://rawgit.com/kriszyp/dbind/master'
+              }, {
+                name: 'views',
+                location: locationPath + 'src/views'
+              }, {
+                name: 'helpers',
+                location: locationPath + 'src/helpers'
+              }, {
+                name: 'actions',
+                location: locationPath + 'src/actions'
+              }, {
+                name: 'stores',
+                location: locationPath + 'src/stores'
+              }, {
+                name: 'app',
+                location: locationPath + 'src'
+              }],
+              deps: ['app/main']
+          };
+        </script>
         <script src="//js.arcgis.com/3.13/"></script>
-        <script src='src/run.js'></script>
     </body>
 </html>

@@ -24,8 +24,7 @@
       location: locationPath + 'src/stores'
     }, {
       name: 'app',
-      location: locationPath + 'src',
-      main: 'main'
+      location: locationPath + 'src'
     }]
   }, ['app']);
 

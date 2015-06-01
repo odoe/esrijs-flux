@@ -1,4 +1,4 @@
-require([
+define([
   'views/MapView',
   'views/LocatorView',
   'dojo/domReady!'
